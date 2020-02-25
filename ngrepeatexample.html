@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+ <ul>
+ 	
+ 	<li ng-repeat="x in arr">{{x}}</li>
+ </ul>
+<select>
+	
+	<option ng-repeat="x in arr">{{x}}</option>
+</select>
+<br><br>
+<select multiple="true">
+	
+	<option ng-repeat="x in arr">{{x}}</option>
+</select>
+
+<table>
+<tr ng-repeat="x in arr"><td>{{x}}</td></tr>
+</table>
+<br><br>
+<ul>
+ 	
+ 	<li ng-repeat="x in arr"><input type="checkbox" name="[]">{{x}}</li>
+ </ul>
+</div>
+
+<script type="text/javascript">
+	var app = angular.module('myapp',[]);
+	app.controller('myctrl',function($scope){
+    
+     $scope.arr=["C","CPP","JAVA",".NET","PHP"];
+
+
+	});
+
+</script>
+</body>
+</html>

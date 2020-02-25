@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="calc.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+<input type="text"  ng-model="txtresult" />
+<br><br>
+<input type="button" ng value="1" ng-click="fun('1')" />
+<input type="button" value="2" ng-click="fun('2')"  />
+<input type="button" value="3" ng-click="fun('3')"  />
+<input type="button" value="4" ng-click="fun('4')"  />
+<br><br>
+<input type="button" ng value="5" ng-click="fun('5')" />
+<input type="button" value="6" ng-click="fun('6')"  />
+<input type="button" value="7" ng-click="fun('7')"  />
+<input type="button" value="8" ng-click="fun('8')"  />
+<br><br>
+<input type="button" value="+" ng-click="fun('+')"  />
+<input type="button" value="-" ng-click="fun('-')"  />
+<input type="button" value="*" ng-click="fun('*')"  />
+<input type="button" value="/" ng-click="fun('/')"  />
+<br><br>
+<input type="button" value="=" ng-click="fun('=')"  />
+</div>
+</body>
+
+</html>

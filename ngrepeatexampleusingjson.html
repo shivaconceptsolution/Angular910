@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+ 
+
+<table border="1" cellpadding="0" cellspacing="0">
+<tr><th>RNO</th><th>SNAME</th><th>BRANCH</th><th>FEES</th></tr>
+<tr ng-repeat="x in arr"><td>{{x.rno}}</td><td>{{x.sname}}</td><td>{{x.branch}}</td><td>{{x.fees}}</td></tr>
+</table>
+
+</div>
+
+<script type="text/javascript">
+	var app = angular.module('myapp',[]);
+	app.controller('myctrl',function($scope){
+    
+     $scope.arr=[
+     {'rno':1001,'sname':'manish kumar','branch':'cs','fees':45000},
+     {'rno':1002,'sname':'jay kumar','branch':'cs','fees':45000},
+     {'rno':1003,'sname':'ram kumar','branch':'IT','fees':55000}
+     ];
+
+
+	});
+
+</script>
+</body>
+</html>
