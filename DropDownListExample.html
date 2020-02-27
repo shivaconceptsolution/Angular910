@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+  <div ng-app="myapp" ng-controller="myctrl">
+
+    <select ng-model="$parent.course">
+      <option ng-repeat="item in arr" value="{{item}}" >{{item}} </option>
+
+    </select>
+    <input type="button" value="Click" ng-click="fun()" />
+<br><br>
+    {{msg}}
+  </div>
+
+  <script type="text/javascript">
+  	
+   var app = angular.module('myapp',[]);
+   app.controller('myctrl',function($scope)
+   {
+
+      $scope.arr = ["C","CPP","DS","JAVA","PHP","iOS","Android"];
+      $scope.fun=function()
+      {
+      	  if ($scope.course!=undefined)
+          $scope.msg = $scope.course;
+         else
+          $scope.msg = 'Please choose an option'; 
+      }
+   }
+
+   	)
+
+  </script>
+</body>
+</html>

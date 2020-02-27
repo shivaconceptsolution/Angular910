@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+  <div ng-app="myapp" ng-controller="myctrl">
+
+    <input type="radio" value="C" name="a" ng-model="a" />C
+    <br><br>
+    <input type="radio" value="CPP" name="a" ng-model="a" />CPP
+   <br><br>
+    <input type="button" value="Click" ng-click="fun()" />
+<br><br>
+    {{msg}}
+  </div>
+
+  <script type="text/javascript">
+  	
+   var app = angular.module('myapp',[]);
+   app.controller('myctrl',function($scope)
+   {
+
+    
+      $scope.fun=function()
+      {
+      	 
+          $scope.msg=$scope.a;
+         
+      }
+   }
+
+   	)
+
+  </script>
+</body>
+</html>
