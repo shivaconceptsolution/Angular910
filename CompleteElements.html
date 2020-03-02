@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myapp" ng-controller="myctrl">
+	
+<input type="text" name="txt1" ng-model="txt1" />
+<br>
+<br>
+<div ng-repeat= "item in arr">
+	<input type="radio" name="r1"  value="{{item}}" ng-model="$parent.item1" />{{item}}
+	<br><br>
+    
+</div>
+<div ng-repeat= "item in arr1">
+	<input type="checkbox" name="r1"  value="{{item}}" ng-model="msg.selected[item]" ng-true-value="'{{item}}'" ng-false-value="''" />{{item}}
+	<br><br>
+    
+</div>
+  <select ng-model="ddl">
+      <option ng-repeat="item in arr" value="{{item}}" >{{item}} </option>
+
+    </select>
+<select multiple="true" ng-model="lst" >
+
+    <option ng-repeat="c in arr" value="{{c}}"> {{c}}</option>
+
+</select>
+<input type="button" ng-click="fun()" value="Click" />
+<br>
+<br>
+{{data}}
+
+
+</div>
+
+<script type="text/javascript">
+	
+var app = angular.module("myapp",[]);
+app.controller("myctrl",function($scope){
+	$scope.data='';
+	$scope.arr = ["C","CPP"];
+    $scope.arr1 = ["JAVA","PHP"];
+     $scope.msg = {
+    selected:{}
+};
+$scope.ddl='';
+   $scope.fun=function()
+   {
+   	   s=$scope.msg.selected;
+       s1=''
+       for(key in s)
+       {
+       	s1 = s1+s[key] +" ";
+       }
+         data1='';
+           for (var v in $scope.lst) {
+       
+                data1=data1+$scope.lst[v]+" ";
+        }
+          $scope.res =data1;
+       $scope.data = $scope.txt1 +" " +$scope.item1 +" "+s1 + $scope.ddl + data1;
+
+   }
+
+
+});
+
+</script>
+</body>
+</html>
